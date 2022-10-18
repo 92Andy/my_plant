@@ -1,16 +1,7 @@
-# my_plant
+# Habit Tracker
 
-A new Flutter project.
+## 🚧 README is work in progress 🚧
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Design
+You can find this design here: https://dribbble.com/shots/8089244-Mobile-App-My-Plant?utm_campaign=pinterest_shot&utm_medium=Social_Share&utm_source=pinterest&utm_content=Mobile+App+-+My+Plant
+by Riyan Hidayat
