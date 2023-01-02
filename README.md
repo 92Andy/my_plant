@@ -1,4 +1,4 @@
-# Habit Tracker
+# My Plant
 
 ## 🚧 README is work in progress 🚧
 
