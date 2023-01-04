@@ -15,8 +15,8 @@ class MyPlantTheme {
       brightness: Brightness.light,
       primary: MyPlantColors.greenSmoke,
       onPrimary: MyPlantColors.surfaceWhite,
-      secondary: MyPlantColors.textBlack,
-      onSecondary: MyPlantColors.surfaceWhite,
+      secondary: MyPlantColors.surfaceWhite,
+      onSecondary: MyPlantColors.textBlack,
       error: Colors.red,
       onError: Colors.white,
       background: MyPlantColors.surfaceWhite,
@@ -31,6 +31,29 @@ class MyPlantTheme {
       headline1: TextStyle(
         color: colorThemeLight().onSurface,
         fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
+      headline2: TextStyle(
+        color: colorThemeLight().onBackground,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
+      headline3: TextStyle(
+        color: colorThemeLight().onSecondary,
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+      ),
+      bodyText1: TextStyle(
+        color: colorThemeLight().onSecondary,
+        fontSize: 18,
+      ),
+      bodyText2: TextStyle(
+        color: colorThemeLight().onBackground,
+        fontSize: 18,
+      ),
+      button: TextStyle(
+        color: colorThemeLight().onPrimary,
+        fontSize: 22,
         fontWeight: FontWeight.bold,
       ),
     );
