@@ -29,16 +29,16 @@ class MyPlantTheme {
   static TextTheme textLightTheme() {
     return TextTheme(
       headline1: TextStyle(
-        color: colorThemeLight().onSurface,
+        color: MyPlantColors.textBlack,
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
       bodyText1: TextStyle(
-        color: colorThemeLight().onSecondary,
+        color: MyPlantColors.textBlack,
         fontSize: 11,
       ),
       button: TextStyle(
-        color: colorThemeLight().onPrimary,
+        color: MyPlantColors.surfaceWhite,
         fontSize: 22,
         fontWeight: FontWeight.bold,
       ),
