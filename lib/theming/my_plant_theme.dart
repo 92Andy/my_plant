@@ -33,16 +33,6 @@ class MyPlantTheme {
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
-      headline2: TextStyle(
-        color: colorThemeLight().onBackground,
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-      ),
-      headline3: TextStyle(
-        color: colorThemeLight().onSecondary,
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
-      ),
       bodyText1: TextStyle(
         color: colorThemeLight().onSecondary,
         fontSize: 18,
