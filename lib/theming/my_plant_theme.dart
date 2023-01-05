@@ -37,10 +37,6 @@ class MyPlantTheme {
         color: colorThemeLight().onSecondary,
         fontSize: 18,
       ),
-      bodyText2: TextStyle(
-        color: colorThemeLight().onBackground,
-        fontSize: 18,
-      ),
       button: TextStyle(
         color: colorThemeLight().onPrimary,
         fontSize: 22,
