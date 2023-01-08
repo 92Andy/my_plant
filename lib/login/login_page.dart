@@ -8,8 +8,36 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: LoginButton(
-          onLoginClicked: () {},
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.fromLTRB(40, 0, 40, 0),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  icon: Icon(Icons.person),
+                  hintText: 'Username',
+                  enabledBorder: UnderlineInputBorder(),
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(40, 0, 40, 40),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  icon: Icon(Icons.lock),
+                  hintText: 'Password',
+                  enabledBorder: UnderlineInputBorder(),
+                ),
+              ),
+            ),
+            LoginButton(
+              onLoginClicked: () {},
+            ),
+          ],
         ),
       ),
     );
