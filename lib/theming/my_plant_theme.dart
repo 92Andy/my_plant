@@ -6,7 +6,7 @@ class MyPlantTheme {
     return ThemeData(
       textTheme: textLightTheme(),
       colorScheme: colorThemeLight(),
-      scaffoldBackgroundColor: Colors.transparent,
+      scaffoldBackgroundColor: Colors.white,
     );
   }
 
