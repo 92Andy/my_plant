@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
+  simple_shadow: ^0.3.0
 
 dev_dependencies:
   flutter_test:
