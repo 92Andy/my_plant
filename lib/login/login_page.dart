@@ -33,7 +33,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(40, 0, 40, 40),
+              padding: const EdgeInsets.only(right: 40, left: 40, bottom: 40,),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
