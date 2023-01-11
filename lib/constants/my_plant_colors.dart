@@ -7,4 +7,5 @@ class MyPlantColors {
   static Color costaDelSol = const Color(0xff637337);
   static Color surfaceWhite = const Color(0xfff8f8f8);
   static Color textBlack = const Color(0xff323232);
+  static Color lightGrey = const Color(0xffc6c6c6);
 }

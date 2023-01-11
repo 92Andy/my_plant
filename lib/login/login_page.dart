@@ -20,30 +20,32 @@ class LoginPage extends StatelessWidget {
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.person,
-                    color: Color(0xffc6c6c6),
+                    color: MyPlantColors.lightGrey,
                   ),
                   hintText: 'Username',
-                  hintStyle: const TextStyle(
-                    color: Color(0xffc6c6c6),
+                  hintStyle: TextStyle(
+                    color: MyPlantColors.lightGrey,
                   ),
                   enabledBorder: myUnderlineBorder(),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 40, left: 40, bottom: 40,),
+              padding: const EdgeInsets.only(
+                bottom: 40,
+              ),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.lock,
-                    color: Color(0xffc6c6c6),
+                    color: MyPlantColors.lightGrey,
                   ),
                   hintText: 'Password',
-                  hintStyle: const TextStyle(
-                    color: Color(0xffc6c6c6),
+                  hintStyle: TextStyle(
+                    color: MyPlantColors.lightGrey,
                   ),
                   enabledBorder: myUnderlineBorder(),
                 ),
@@ -53,11 +55,8 @@ class LoginPage extends StatelessWidget {
               onLoginClicked: () {},
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(
-                40,
-                40,
-                20,
-                0,
+              padding: const EdgeInsets.only(
+                top: 40,
               ),
               child: Row(
                 children: [
