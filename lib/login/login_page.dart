@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+              padding: const EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
