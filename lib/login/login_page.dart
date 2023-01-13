@@ -6,6 +6,8 @@ import 'package:my_plant/login/widgets/login_button.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
+  final SizedBox _verticalSpacer = const SizedBox(height: 40);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,11 +34,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                bottom: 40,
-              ),
-              child: TextField(
+              TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   icon: Icon(
@@ -50,45 +48,34 @@ class LoginPage extends StatelessWidget {
                   enabledBorder: myUnderlineBorder(),
                 ),
               ),
-            ),
-            LoginButton(
-              onLoginClicked: () {},
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 40,
+              _verticalSpacer,
+              LoginButton(
+                onLoginClicked: () {},
               ),
-              child: Row(
+              _verticalSpacer,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: 60,
-                    ),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Forgot Password ?',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: MyPlantColors.greenSmoke.withOpacity(.7),
-                        ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot Password ?',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: MyPlantColors.greenSmoke.withOpacity(.7),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 60,
-                    ),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: MyPlantColors.greenSmoke.withOpacity(.7),
-                        ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: MyPlantColors.greenSmoke.withOpacity(.7),
+>>>>>>> 0770bda (#4: Applied requested changes)
                       ),
                     ),
                   ),
@@ -102,9 +89,9 @@ class LoginPage extends StatelessWidget {
   }
 
   UnderlineInputBorder myUnderlineBorder() {
-    return const UnderlineInputBorder(
+    return UnderlineInputBorder(
       borderSide: BorderSide(
-        color: Color(0xffc6c6c6),
+        color: MyPlantColors.lightGrey,
       ),
     );
   }
