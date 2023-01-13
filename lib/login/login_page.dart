@@ -34,53 +34,51 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.lock,
-                    color: MyPlantColors.lightGrey,
-                  ),
-                  hintText: 'Password',
-                  hintStyle: TextStyle(
-                    color: MyPlantColors.lightGrey,
-                  ),
-                  enabledBorder: myUnderlineBorder(),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                icon: Icon(
+                  Icons.lock,
+                  color: MyPlantColors.lightGrey,
                 ),
+                hintText: 'Password',
+                hintStyle: TextStyle(
+                  color: MyPlantColors.lightGrey,
+                ),
+                enabledBorder: myUnderlineBorder(),
               ),
-              _verticalSpacer,
-              LoginButton(
-                onLoginClicked: () {},
-              ),
-              _verticalSpacer,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Forgot Password ?',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
-                        color: MyPlantColors.greenSmoke.withOpacity(.7),
-                      ),
+            ),
+            _verticalSpacer,
+            LoginButton(
+              onLoginClicked: () {},
+            ),
+            _verticalSpacer,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Forgot Password ?',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: MyPlantColors.greenSmoke.withOpacity(.7),
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
-                        color: MyPlantColors.greenSmoke.withOpacity(.7),
->>>>>>> 0770bda (#4: Applied requested changes)
-                      ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: MyPlantColors.greenSmoke.withOpacity(.7),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
