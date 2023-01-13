@@ -13,13 +13,13 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         const LoginBackground(),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: TextField(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   icon: Icon(
@@ -33,54 +33,54 @@ class LoginPage extends StatelessWidget {
                   enabledBorder: myUnderlineBorder(),
                 ),
               ),
-            ),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                icon: Icon(
-                  Icons.lock,
-                  color: MyPlantColors.lightGrey,
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  icon: Icon(
+                    Icons.lock,
+                    color: MyPlantColors.lightGrey,
+                  ),
+                  hintText: 'Password',
+                  hintStyle: TextStyle(
+                    color: MyPlantColors.lightGrey,
+                  ),
+                  enabledBorder: myUnderlineBorder(),
                 ),
-                hintText: 'Password',
-                hintStyle: TextStyle(
-                  color: MyPlantColors.lightGrey,
-                ),
-                enabledBorder: myUnderlineBorder(),
               ),
-            ),
-            _verticalSpacer,
-            LoginButton(
-              onLoginClicked: () {},
-            ),
-            _verticalSpacer,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Forgot Password ?',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                      color: MyPlantColors.greenSmoke.withOpacity(.7),
+              _verticalSpacer,
+              LoginButton(
+                onLoginClicked: () {},
+              ),
+              _verticalSpacer,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot Password ?',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: MyPlantColors.greenSmoke.withOpacity(.7),
+                      ),
                     ),
                   ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                      color: MyPlantColors.greenSmoke.withOpacity(.7),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: MyPlantColors.greenSmoke.withOpacity(.7),
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ]),
     );
