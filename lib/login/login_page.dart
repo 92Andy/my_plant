@@ -53,6 +53,7 @@ class _LoginInterface extends StatelessWidget {
             prefixIcon: Icon(
               Icons.lock,
               color: MyPlantColors.lightGrey,
+          SvgPicture.asset('assets/myPlantLogo.svg'),
             ),
             hintText: 'Password',
             hintStyle: TextStyle(
