@@ -39,7 +39,7 @@ class MyPlantTheme {
       ),
       button: TextStyle(
         color: MyPlantColors.surfaceWhite,
-        fontSize: 22,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
     );

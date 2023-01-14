@@ -14,8 +14,8 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 230,
       height: 40,
+      width: double.infinity,
       child: MaterialButton(
         color: MyPlantColors.greenSmoke,
         shape: const RoundedRectangleBorder(
