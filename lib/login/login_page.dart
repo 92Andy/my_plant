@@ -8,93 +8,101 @@ class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: const [
-          LoginBackground(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            child: _LoginInterface(),
-          ),
-        ],
-      ),
+    return Stack(
+      children: const [
+        LoginBackground(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40),
+          child: _LoginInterface(),
+        ),
+      ],
     );
   }
 }
 
 class _LoginInterface extends StatelessWidget {
-  const _LoginInterface({super.key});
+  const _LoginInterface();
 
   final SizedBox _verticalSpacer = const SizedBox(height: 40);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            prefixIcon: Icon(
-              Icons.person,
-              color: MyPlantColors.lightGrey,
-            ),
-            hintText: 'Username',
-            hintStyle: TextStyle(
-              color: MyPlantColors.lightGrey,
-            ),
-            enabledBorder: _underline,
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Column(
+        children: [
+          const Expanded(
+            flex: 2,
+            child: SizedBox.shrink(),
           ),
-        ),
-        TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            prefixIcon: Icon(
-              Icons.lock,
-              color: MyPlantColors.lightGrey,
           SvgPicture.asset('assets/myPlantLogo.svg'),
+          const SizedBox(height: 60),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.person,
+                color: MyPlantColors.lightGrey,
+              ),
+              hintText: 'Username',
+              hintStyle: TextStyle(
+                color: MyPlantColors.lightGrey,
+              ),
+              enabledBorder: _underline,
             ),
-            hintText: 'Password',
-            hintStyle: TextStyle(
-              color: MyPlantColors.lightGrey,
-            ),
-            enabledBorder: _underline,
           ),
-        ),
-        _verticalSpacer,
-        LoginButton(
-          onLoginClicked: () {},
-        ),
-        _verticalSpacer,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Forgot Password ?',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                  color: MyPlantColors.greenSmoke.withOpacity(.7),
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.lock,
+                color: MyPlantColors.lightGrey,
+              ),
+              hintText: 'Password',
+              hintStyle: TextStyle(
+                color: MyPlantColors.lightGrey,
+              ),
+              enabledBorder: _underline,
+            ),
+          ),
+          _verticalSpacer,
+          LoginButton(
+            onLoginClicked: () {},
+          ),
+          _verticalSpacer,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Forgot Password ?',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    color: MyPlantColors.greenSmoke.withOpacity(.7),
+                  ),
                 ),
               ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Sign Up',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                  color: MyPlantColors.greenSmoke.withOpacity(.7),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.normal,
+                    color: MyPlantColors.greenSmoke.withOpacity(.7),
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-      ],
+            ],
+          ),
+          const Expanded(
+            flex: 3,
+            child: SizedBox.shrink(),
+          ),
+        ],
+      ),
     );
   }
 
