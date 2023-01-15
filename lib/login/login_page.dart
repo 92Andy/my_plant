@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_plant/login/widgets/login_background.dart';
 import 'package:my_plant/constants/my_plant_colors.dart';
 import 'package:my_plant/login/widgets/login_button.dart';
+import 'package:my_plant/my_plants/my_plants_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -67,7 +68,12 @@ class _LoginInterface extends StatelessWidget {
           ),
           _verticalSpacer,
           LoginButton(
-            onLoginClicked: () {},
+            onLoginClicked: () => Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const MyPlantsPage(),
+              ),
+            ),
           ),
           _verticalSpacer,
           Row(

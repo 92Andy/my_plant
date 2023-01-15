@@ -24,6 +24,7 @@ class LoginButton extends StatelessWidget {
             topLeft: _buttonCircularBorderRadius,
           ),
         ),
+        onPressed: onLoginClicked,
         child: const Text(
           'Sign In',
           style: TextStyle(
@@ -31,7 +32,6 @@ class LoginButton extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () {},
       ),
     );
   }
