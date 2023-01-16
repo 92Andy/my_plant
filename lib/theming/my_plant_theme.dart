@@ -33,6 +33,12 @@ class MyPlantTheme {
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
+      headline2: const TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+      ),
       bodyText1: TextStyle(
         color: MyPlantColors.textBlack,
         fontSize: 11,
