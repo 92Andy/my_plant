@@ -28,36 +28,69 @@ class _MyPlantsPageState extends State<MyPlantsPage> {
   }
 }
 
+class _MyPlantDetailPage extends StatelessWidget {
+  const _MyPlantDetailPage();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold();
+  }
+}
+
 class _CustomDrawer extends StatelessWidget {
   const _CustomDrawer();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * .3,
-      height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        color: MyPlantColors.greenSmoke,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Column(
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height * .1),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * .1,
-            child: Center(
-              child: Text(
-                'My Plants',
-                style: Theme.of(context).textTheme.headline2,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          width: MediaQuery.of(context).size.width * .3,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+            color: MyPlantColors.greenSmoke,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * .1),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .1,
+                child: Center(
+                  child: Text(
+                    'My Plants',
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                ),
+              ),
+              const Divider(
+                color: Colors.white,
+                thickness: 3,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 40,
+          width: 30,
+          child: MaterialButton(
+            color: MyPlantColors.greenSmoke,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                topLeft: Radius.circular(10),
               ),
             ),
+            padding: EdgeInsets.zero,
+            onPressed: () => Navigator.pop(context),
+            child: const Icon(
+              Icons.keyboard_double_arrow_left,
+              color: Colors.white,
+            ),
           ),
-          const Divider(
-            color: Colors.white,
-            thickness: 3,
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
