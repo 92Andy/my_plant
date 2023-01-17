@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/my_plant_colors.dart';
+import 'package:my_plant/constants/my_plant_colors.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({super.key});
@@ -10,7 +10,7 @@ class SearchBar extends StatelessWidget {
     return Row(
       children: [
         TextField(
-          obscureText: true,
+          obscureText: false,
           decoration: InputDecoration(
             hintText: 'Search your plant',
             hintStyle: TextStyle(

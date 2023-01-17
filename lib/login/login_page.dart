@@ -39,7 +39,7 @@ class _LoginInterface extends StatelessWidget {
           SvgPicture.asset('assets/myPlantLogo.svg'),
           const SizedBox(height: 60),
           TextField(
-            obscureText: true,
+            obscureText: false,
             decoration: InputDecoration(
               prefixIcon: Icon(
                 Icons.person,
