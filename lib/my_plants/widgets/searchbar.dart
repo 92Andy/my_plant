@@ -10,7 +10,6 @@ class SearchBar extends StatelessWidget {
     return Row(
       children: [
         TextField(
-          obscureText: false,
           decoration: InputDecoration(
             hintText: 'Search your plant',
             hintStyle: TextStyle(
