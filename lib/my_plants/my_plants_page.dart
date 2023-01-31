@@ -9,31 +9,47 @@ class MyPlantsPage extends StatefulWidget {
 }
 
 class _MyPlantsPageState extends State<MyPlantsPage> {
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      drawer: const _CustomDrawer(),
-      body: Center(
-        child: OutlinedButton(
-          onPressed: () => setState(() {
-            _scaffoldKey.currentState!.openDrawer();
-          }),
-          child: const Text('open drawer'),
+    final rightSlide = MediaQuery.of(context).size.width * 0.25;
+
+    return Stack(
+      children: [
+        const Scaffold(
+          body: _CustomDrawer(),
         ),
-      ),
+        Transform(
+          transform: Matrix4.identity()
+            ..translate(rightSlide)
+            ..scale(0.85),
+          alignment: Alignment.bottomCenter,
+          child: _MyPlantDetailPage(
+            openDrawer: () {},
+          ),
+        ),
+      ],
     );
   }
 }
 
 class _MyPlantDetailPage extends StatelessWidget {
-  const _MyPlantDetailPage();
+  const _MyPlantDetailPage({
+    required this.openDrawer,
+  });
+
+  final VoidCallback openDrawer;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      backgroundColor: MyPlantColors.lightGrey,
+      body: Center(
+        child: OutlinedButton(
+          onPressed: openDrawer,
+          child: const Text('open drawer'),
+        ),
+      ),
+    );
   }
 }
 
@@ -42,55 +58,57 @@ class _CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          width: MediaQuery.of(context).size.width * .3,
-          height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            color: MyPlantColors.greenSmoke,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Column(
-            children: [
-              SizedBox(height: MediaQuery.of(context).size.height * .1),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * .1,
-                child: Center(
-                  child: Text(
-                    'My Plants',
-                    style: Theme.of(context).textTheme.headline2,
+    return Scaffold(
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * .3,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+              color: MyPlantColors.greenSmoke,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Column(
+              children: [
+                SizedBox(height: MediaQuery.of(context).size.height * .1),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .1,
+                  child: Center(
+                    child: Text(
+                      'My Plants',
+                      style: Theme.of(context).textTheme.headline2,
+                    ),
                   ),
                 ),
+                const Divider(
+                  color: Colors.white,
+                  thickness: 3,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 40,
+            width: 30,
+            child: MaterialButton(
+              color: MyPlantColors.greenSmoke,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  topLeft: Radius.circular(10),
+                ),
               ),
-              const Divider(
+              padding: EdgeInsets.zero,
+              onPressed: () => Navigator.pop(context),
+              child: const Icon(
+                Icons.keyboard_double_arrow_left,
                 color: Colors.white,
-                thickness: 3,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 40,
-          width: 30,
-          child: MaterialButton(
-            color: MyPlantColors.greenSmoke,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                topLeft: Radius.circular(10),
               ),
             ),
-            padding: EdgeInsets.zero,
-            onPressed: () => Navigator.pop(context),
-            child: const Icon(
-              Icons.keyboard_double_arrow_left,
-              color: Colors.white,
-            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
