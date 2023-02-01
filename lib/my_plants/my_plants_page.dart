@@ -30,6 +30,7 @@ class _MyPlantsPageState extends State<MyPlantsPage>
   @override
   Widget build(BuildContext context) {
     final rightTransformationPosX = MediaQuery.of(context).size.width * 0.25;
+
     return AnimatedBuilder(
       animation: _animationController,
       builder: (context, child) {
@@ -49,6 +50,30 @@ class _MyPlantsPageState extends State<MyPlantsPage>
               alignment: Alignment.bottomCenter,
               child: _MyPlantDetailPage(
                 openDrawer: openDrawer,
+              ),
+            ),
+            //Todo: ae
+            Align(
+              alignment: Alignment.centerRight,
+              child: SizedBox(
+                height: 40,
+                width: 30,
+                child: MaterialButton(
+                  color: MyPlantColors.greenSmoke,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      topLeft: Radius.circular(10),
+                    ),
+                  ),
+                  padding: EdgeInsets.zero,
+                  onPressed: () =>
+                      _animationController.isCompleted ? closeDrawer() : null,
+                  child: const Icon(
+                    Icons.keyboard_double_arrow_left,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ],
