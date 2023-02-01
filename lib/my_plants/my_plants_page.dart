@@ -8,28 +8,58 @@ class MyPlantsPage extends StatefulWidget {
   State<MyPlantsPage> createState() => _MyPlantsPageState();
 }
 
-class _MyPlantsPageState extends State<MyPlantsPage> {
-  @override
-  Widget build(BuildContext context) {
-    final rightSlide = MediaQuery.of(context).size.width * 0.25;
+class _MyPlantsPageState extends State<MyPlantsPage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
 
-    return Stack(
-      children: [
-        const Scaffold(
-          body: _CustomDrawer(),
-        ),
-        Transform(
-          transform: Matrix4.identity()
-            ..translate(rightSlide)
-            ..scale(0.85),
-          alignment: Alignment.bottomCenter,
-          child: _MyPlantDetailPage(
-            openDrawer: () {},
-          ),
-        ),
-      ],
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
     );
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final rightTransformationPosX = MediaQuery.of(context).size.width * 0.25;
+    return AnimatedBuilder(
+      animation: _animationController,
+      builder: (context, child) {
+        final rightTranslation =
+            rightTransformationPosX * _animationController.value;
+        final scaling = 1 - (_animationController.value * 0.3);
+
+        return Stack(
+          children: [
+            const Scaffold(
+              body: _CustomDrawer(),
+            ),
+            Transform(
+              transform: Matrix4.identity()
+                ..translate(rightTranslation)
+                ..scale(scaling),
+              alignment: Alignment.bottomCenter,
+              child: _MyPlantDetailPage(
+                openDrawer: openDrawer,
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void openDrawer() => _animationController.forward();
+
+  void closeDrawer() => _animationController.reverse();
 }
 
 class _MyPlantDetailPage extends StatelessWidget {
@@ -42,7 +72,7 @@ class _MyPlantDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyPlantColors.lightGrey,
+      backgroundColor: MyPlantColors.myPlantWhite,
       body: Center(
         child: OutlinedButton(
           onPressed: openDrawer,
