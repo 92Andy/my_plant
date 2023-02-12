@@ -1,11 +1,11 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+class Plant {
+  const Plant({
+    required this.imageUrl,
+    required this.plantDescription,
+    required this.plantName,
+  });
 
-class MyPlantModel extends StatelessWidget {
-  const MyPlantModel({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  final String imageUrl;
+  final String plantDescription;
+  final String plantName;
 }
