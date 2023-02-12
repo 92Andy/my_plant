@@ -50,6 +50,7 @@ class _MyPlantsPageState extends State<MyPlantsPage>
               alignment: Alignment.bottomCenter,
               child: _MyPlantDetailPage(
                 openDrawer: openDrawer,
+                animationController: _animationController,
               ),
             ),
             //Todo: ae
@@ -90,15 +91,24 @@ class _MyPlantsPageState extends State<MyPlantsPage>
 class _MyPlantDetailPage extends StatelessWidget {
   const _MyPlantDetailPage({
     required this.openDrawer,
+    required this.animationController,
   });
 
   final VoidCallback openDrawer;
+  final AnimationController animationController;
+  final double _borderCircularRadius = 60;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyPlantColors.myPlantWhite,
-      body: Center(
+    return Container(
+      decoration: BoxDecoration(
+        color: MyPlantColors.myPlantWhite,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(
+              _borderCircularRadius * animationController.value),
+        ),
+      ),
+      child: Center(
         child: OutlinedButton(
           onPressed: openDrawer,
           child: const Text('open drawer'),
