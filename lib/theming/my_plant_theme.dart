@@ -14,15 +14,15 @@ class MyPlantTheme {
     return ColorScheme(
       brightness: Brightness.light,
       primary: MyPlantColors.greenSmoke,
-      onPrimary: MyPlantColors.surfaceWhite,
+      onPrimary: MyPlantColors.myPlantWhite,
       secondary: MyPlantColors.deco,
-      onSecondary: MyPlantColors.surfaceWhite,
+      onSecondary: MyPlantColors.myPlantWhite,
       error: Colors.red,
       onError: Colors.white,
-      background: MyPlantColors.surfaceWhite,
+      background: MyPlantColors.myPlantWhite,
       onBackground: MyPlantColors.greenSmoke,
       surface: MyPlantColors.greenSmoke,
-      onSurface: MyPlantColors.surfaceWhite,
+      onSurface: MyPlantColors.myPlantWhite,
     );
   }
 
@@ -33,12 +33,18 @@ class MyPlantTheme {
         fontSize: 24,
         fontWeight: FontWeight.bold,
       ),
+      headline2: const TextStyle(
+        color: Colors.white,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.italic,
+      ),
       bodyText1: TextStyle(
         color: MyPlantColors.textBlack,
         fontSize: 11,
       ),
       button: TextStyle(
-        color: MyPlantColors.surfaceWhite,
+        color: MyPlantColors.myPlantWhite,
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
